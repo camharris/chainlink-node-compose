@@ -13,6 +13,8 @@ services:
 
   chainlink:
     build: .
+    stdin_open: true
+    tty: true
     env_file:
       - chainlink.env
     ports:
