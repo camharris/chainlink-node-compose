@@ -15,7 +15,6 @@ services:
     build: .
     env_file:
       - chainlink.env
-    command: local node -p /chainlink/.password -a /chainlink/.api
     ports:
       - 6688:6688
     links:
@@ -23,7 +22,9 @@ services:
     depends_on:
       - postgres
     volumes: 
-      - chainlink_data:/chainlink
+      - ./chainlink_data:/chainlink
+    entrypoint: dockerize -wait tcp://postgres:5432 -timeout 300s chainlink
+    command: local node -p /chainlink/.password -a /chainlink/.api
 
 
 
