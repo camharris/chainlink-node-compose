@@ -17,7 +17,9 @@ to use their ehtereum client services for this deployment.
 
 2. Rename the `.password.example` file to `.password` and add your secure wallet password
 
-3. Edit the chainlink.env file, update the `ETH_URL` to point to your ethereum 
+3. Move `.api` and `.password` to `chainlink_data` folder
+
+4. Edit the chainlink.env file, update the `ETH_URL` to point to your ethereum 
 client. If you'd like to use a different ethereum network other than Rinkby, 
 you will need to update the `LINK_CONTRACT_ADDRESS` to reflect the correct network,
 for more documentation on the available contract addresses please see Chanlink 
@@ -25,7 +27,7 @@ docs [here](https://docs.chain.link/docs/running-a-chainlink-node#create-an-envi
 For more documentation on what other configuration variables can be set in this
 file see additional docs [here](https://docs.chain.link/docs/configuration-variables)  
 
-4. Start the docker-compose after building: 
+5. Start the docker-compose after building: 
 ```
 docker-compose build && docker-compose up
 ```
