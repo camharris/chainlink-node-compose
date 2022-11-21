@@ -1,4 +1,4 @@
-FROM smartcontract/chainlink:0.10.3
+FROM smartcontract/chainlink:1.10.0
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
